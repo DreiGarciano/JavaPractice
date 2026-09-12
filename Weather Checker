@@ -1,0 +1,47 @@
+package scherry;
+import java.util.Scanner;
+public class Scherry {
+    
+    public static double converter(double celsius) {
+        double farehn = (celsius * (9.0 / 5.0)) + 32;
+        return farehn;
+    }
+    public static String warning2(double farehn) {
+        if(farehn <= 32) {
+            return "Freeze Warning";
+        }
+        else if(farehn > 32 && farehn <= 89){
+            return "Normal";
+        }
+        else if(farehn>= 90) {
+            return "Heat Warning";
+        }
+        else {
+            return "scherry";
+        }
+    }
+
+    public static void main(String[] args) {
+      Scanner input = new Scanner(System.in);
+      double cel = 0;
+      double celsius = 0;
+      double farehn = 0;          
+      String warning;
+      
+       System.out.println("Enter How many Temperature: ");
+       int count = input.nextInt();
+       double[] temp = new double[count]; 
+       for(int i = 0; i < count; i++)  {
+           System.out.println("Enter How many Temperatur you wanna insert" + (i + 1) + ": ");
+           temp[i] = input.nextDouble();
+       }
+       
+       for(int i = 0; i < temp.length; i++) {
+           cel = temp[i];
+           farehn = converter(cel);
+           warning = warning2(farehn);
+           System.out.println(cel + "C" + " " + farehn + "F" + " " + warning );
+        }
+       
+    }   
+}
