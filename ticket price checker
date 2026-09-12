@@ -1,0 +1,50 @@
+package scherry;
+import java.util.Scanner;
+public class Scherry {
+    public static String getPriceTicket(int age) {
+        if(age <= 3) {
+            return "Free";
+        }
+        else if(age >= 3 && age <= 12) {
+            return "Child";
+        }
+        else if(age >= 13 && age <= 64) {
+            return "Adult";
+        }
+        else if(age >= 65) {
+            return "Senior";
+        }
+        else {
+            return "Invalid";
+        }
+    }
+    public static double ticketPrice(int age) {
+        if(age <= 3) {
+            return 0.0;
+        }
+        else if(age >= 3 && age <= 12) {
+            return 8.50;
+        }
+        else if(age >= 13 && age <= 64) {
+            return 12.00;
+        }
+        else if(age >= 65) {
+            return 9.00;
+        }
+        else {
+            return 0;
+        }
+    }
+    
+    public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       int age = 0;
+       double price = 0;
+        System.out.println("Enter Age: ");
+        age = input.nextInt();
+        
+        System.out.println("Age: " + age);
+        System.out.println("Ticket Price: " + ticketPrice(age));
+        System.out.println("Type: " + getPriceTicket(age));
+    }   
+}
