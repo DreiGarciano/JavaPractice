@@ -1,0 +1,41 @@
+package scherry;
+public class Scherry {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int scores[] = {78, 92, 55, 88, 100, 45, 67};
+        int largest = 0;
+        int passing = 0, failing = 0;
+        int vowels = 0;
+        String name = "Scherriebethe";
+        
+        for(int i = 0; i < scores.length; i++) {
+            if(scores[i] > largest) {
+                largest = scores[i];
+            }
+            if(scores[i] < 60) {
+                failing++;
+            }
+            else if(scores[i] >= 60) {
+                passing++;
+            }                                        
+        }
+        for(int i = 0; i < name.length(); i++){
+         char letters = name.charAt(i);
+            if (letters == 'a' || letters == 'A'
+                    || letters == 'e' || letters == 'E'
+                            || letters == 'i' || letters == 'I'
+                                    || letters == 'o' || letters == 'O'
+                                            || letters == 'u' || letters == 'U') 
+            {
+                vowels++;
+            }
+        }
+        System.out.println("Highest Score: " + largest);
+        System.out.println("Passing Score: " + passing);
+        System.out.println("Failing Score: " + failing);
+        System.out.println("Vowels in name: : " + vowels);
+    }    
+}
