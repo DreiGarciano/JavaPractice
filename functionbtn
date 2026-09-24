@@ -1,0 +1,41 @@
+private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        try {  
+          double java = Double.parseDouble(txtJava.getText()); // txtJava = variable name nung textbox
+          double database = Double.parseDouble(txtDatabase.getText()); // txtDatabase same lang din 
+          double networking = Double.parseDouble(txtNetworking.getText()); // txtNetworking same lang din 
+          double math = Double.parseDouble(txtMath.getText()); // txtMath same lang din 
+          
+          double total = java + database + networking + math;
+          double average = total / 4;
+          
+          double highest = Math.max(Math.max(java, database), Math.max(networking, math));
+          double lowest = Math.min(Math.min(java, database), Math.min(networking, math));
+          
+          String result = (average >= 75) ? "PASSED" : "FAILED";
+          
+         txtTotal.setText(String.valueOf(total));
+         txtAverage.setText(String.format("%.2f", average));
+         txtHighest.setText(String.valueOf(highest));
+         txtLowest.setText(String.valueOf(lowest));
+         txtResult.setText(result);
+        } 
+        catch (NumberFormatException e) {
+        javax.swing.JOptionPane.showMessageDialog(this,
+            "bugok.",
+            "Input Error",
+            javax.swing.JOptionPane.ERROR_MESSAGE);
+    }
+    
+    }                                        
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {    // clear btn                                     
+        txtJava.setText("0")  ;
+        txtDatabase.setText("0")  ;
+        txtNetworking.setText("0")  ;
+        txtMath.setText("0")  ;
+        txtTotal.setText("0")  ;
+        txtAverage.setText("0")  ;
+        txtHighest.setText("0")  ;
+        txtLowest.setText("0")  ;
+        txtResult.setText("0")  ;
+    }
